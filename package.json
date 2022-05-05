@@ -1,0 +1,46 @@
+{
+  "name": "QAap",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "generateAPK": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && ./gradlew assembleDebug && cd ..",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@gorhom/bottom-sheet": "^4.1.5",
+    "@react-native-community/checkbox": "^0.5.12",
+    "@react-native-community/masked-view": "^0.1.11",
+    "@react-navigation/bottom-tabs": "^5.11.2",
+    "@react-navigation/native": "^5.9.8",
+    "@react-navigation/stack": "^5.14.9",
+    "formik": "^2.2.9",
+    "react": "17.0.2",
+    "react-native": "0.67.3",
+    "react-native-effects-view": "^0.4.0",
+    "react-native-gesture-handler": "^2.2.0",
+    "react-native-linear-gradient": "^2.5.6",
+    "react-native-reanimated": "^2.4.0",
+    "react-native-safe-area-context": "^3.4.1",
+    "react-native-screens": "^2.18.1",
+    "react-native-swiper": "^1.6.0",
+    "toggle-switch-react-native": "^3.3.0",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/runtime": "^7.17.2",
+    "@react-native-community/eslint-config": "^3.0.1",
+    "babel-jest": "^27.5.1",
+    "eslint": "^8.11.0",
+    "jest": "^27.5.1",
+    "metro-react-native-babel-preset": "^0.69.0",
+    "react-test-renderer": "17.0.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

@@ -1,0 +1,6 @@
+module Pods_QAap_QAapTests {
+  umbrella header "Pods-QAap-QAapTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

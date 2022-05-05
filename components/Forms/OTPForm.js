@@ -1,30 +1,32 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from "react";
 import {
   View,
   Text,
   TouchableOpacity,
   TextInput,
   TouchableWithoutFeedback,
-} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import {COLORS, SIZES, FONTS} from '../../constants';
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { COLORS, SIZES, FONTS } from "../../constants";
 import {
   styleAuthScreen,
   styleFormComponents,
   styleButtons,
   styleFooter,
-} from '../../assets/css';
+} from "../../assets/css";
 
-const OTPForm = ({typeUrl}) => {
+const OTPForm = ({ typeUrl }) => {
+  // const {typeUrl} = route.params;
   const navigation = useNavigation();
 
   const renderFooter = (
     <TouchableOpacity
       style={styleAuthScreen.authOTPFooterWrapper}
-      onPress={() => navigation.navigate('Login')}>
+      onPress={() => navigation.navigate("Login")}
+    >
       <Text style={styleFooter.authOTPFooterText}>
         Didn’t you receive the OTP?
-        <Text style={styleFooter.footerSecondaryText}>{''} Resend OTP</Text>
+        <Text style={styleFooter.footerSecondaryText}>{""} Resend OTP</Text>
       </Text>
     </TouchableOpacity>
   );
@@ -84,37 +86,14 @@ const OTPForm = ({typeUrl}) => {
         {renderFooter}
       </View>
       <View style={styleAuthScreen.authOTPButtonWrapper}>
-        {typeUrl === 'Login' && (
-          <TouchableOpacity
-            style={styleButtons.secondaryButton}
-            onPress={() =>
-              navigation.navigate('QappUserScreen', {
-                screen: 'ConsumerDashboard',
-              })
-            }>
-            <Text style={styleButtons.secondaryButtonText}>Confirm OTP</Text>
-          </TouchableOpacity>
-        )}
-
-        {typeUrl === 'ResetPassword' && (
-          <TouchableOpacity
-            style={styleButtons.secondaryButton}
-            onPress={() => navigation.navigate('NewPassword')}>
-            <Text style={styleButtons.secondaryButtonText}>Verify OTP</Text>
-          </TouchableOpacity>
-        )}
-
-        {typeUrl === 'BankLogin' && (
-          <TouchableOpacity
-            style={styleButtons.secondaryButton}
-            onPress={() =>
-              navigation.navigate('BankFIScreen', {
-                screen: 'BankDashboard',
-              })
-            }>
-            <Text style={styleButtons.secondaryButtonText}>Verify OTP</Text>
-          </TouchableOpacity>
-        )}
+        <TouchableOpacity
+          style={styleButtons.secondaryButton}
+          onPress={() =>
+            navigation.navigate('Login')
+          }>
+          <Text style={styleButtons.secondaryButtonText}>Continue</Text>
+        </TouchableOpacity>
+        
       </View>
     </Fragment>
   );

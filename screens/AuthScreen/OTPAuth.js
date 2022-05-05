@@ -11,9 +11,8 @@ import {COLORS} from '../../constants';
 import {CustomHeader} from '../../components/common';
 import {OTPForm} from '../../components/Forms';
 
-const OTPAuth = ({route}) => {
-  const {typeUrl} = route.params;
-  // console.log(typeUrl);
+const OTPAuth = ({typeUrl}) => {
+  // const {typeUrl} = route.params;
   return (
     <SafeAreaView
       behavior={Platform.OS === 'ios' ? 'padding' : null}

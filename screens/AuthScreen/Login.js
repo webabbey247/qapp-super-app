@@ -1,26 +1,23 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React from 'react';
 import {
   View,
-  Text,
   KeyboardAvoidingView,
   Platform,
   StatusBar,
   ScrollView,
   TouchableOpacity,
   Image,
-  TouchableWithoutFeedback,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {COLORS, icons} from '../../constants';
-import {styleGeneral, styleAuthScreen, styleFooter} from '../../assets/css';
-import {QappLoginForm} from '../../components/Forms';
+import {styleGeneral} from '../../assets/css';
 import LinearGradient from 'react-native-linear-gradient';
 
 import {CustomHeader} from '../../components/common';
+import { PasswordLoginForm } from '../../components/Forms';
 
 const Login = ({navigation}) => {
-  const [togglePhoneOption, setTogglePhoneOption] = useState(true);
 
   const renderHeader = (
     <TouchableOpacity
@@ -40,48 +37,6 @@ const Login = ({navigation}) => {
     </TouchableOpacity>
   );
 
-  const renderLoginOption = (
-    <View style={styleAuthScreen.loginOptionContainer}>
-      <View style={styleAuthScreen.loginOptionsWrapper}>
-        <TouchableOpacity
-          style={[
-            styleAuthScreen.loginOptionsTab,
-            togglePhoneOption
-              ? styleAuthScreen.loginOptionsActiveTab
-              : styleAuthScreen.loginOptionsInActiveTab,
-          ]}
-          onPress={() => {
-            setTogglePhoneOption(true);
-          }}>
-          <Text style={styleAuthScreen.loginOptionsTabText}>Phone Number</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[
-            styleAuthScreen.loginOptionsTab,
-            togglePhoneOption
-              ? styleAuthScreen.loginOptionsInActiveTab
-              : styleAuthScreen.loginOptionsActiveTab,
-          ]}
-          onPress={() => {
-            setTogglePhoneOption(false);
-          }}>
-          <Text style={styleAuthScreen.loginOptionsTabText}>Email Address</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-
-  const renderFooter = (
-    <TouchableWithoutFeedback
-      style={styleAuthScreen.authFooterWrapper}
-      onPress={() => navigation.navigate('SignUp')}>
-      <Text style={styleFooter.footerText}>
-        Don’t have an account?
-        <Text style={styleFooter.footerSecondaryText}>{''} Sign Up</Text>
-      </Text>
-    </TouchableWithoutFeedback>
-  );
-
   return (
     <LinearGradient
       colors={[COLORS.deepBlue, COLORS.progressProfile]}
@@ -99,12 +54,10 @@ const Login = ({navigation}) => {
           <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
             <CustomHeader
               type="primary"
-              title="Login to QAPP"
+              title="Enter Password"
               subtitle="Sign in to continue."
             />
-            {renderLoginOption}
-            <QappLoginForm toggleOption={togglePhoneOption} />
-            {renderFooter}
+            <PasswordLoginForm />
           </ScrollView>
         </KeyboardAvoidingView>
       </SafeAreaView>

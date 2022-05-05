@@ -6,47 +6,42 @@ import {
   StatusBar,
   Platform,
   Text,
-  TouchableOpacity,
   Image,
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 import LinearGradient from 'react-native-linear-gradient';
+import { WalkThroughForm } from '../../components/Forms';
 
 import {COLORS, images} from '../../constants';
 import {
   styleWalkThroughScreen,
-  styleButtons,
-  styleFooter,
 } from '../../assets/css';
 
 const Walkthrough = [
   {
     id: 1,
-    header: 'One account for',
-    title: 'every bank',
+    header: 'One account for every bank',
     sub_title:
       'Own your limits with custom design that lets you manage all your bank account in one space.',
     image: images.bannerOne,
   },
   {
     id: 2,
-    header: 'One account for',
-    title: 'every bank',
+    header: 'One account for every bank',
     sub_title:
       'Own your limits with custom design that lets you manage all your bank account in one space.',
     image: images.bannerOne,
   },
   {
     id: 3,
-    header: 'One account for',
-    title: 'every bank',
+    header: 'One account for every bank',
     sub_title:
       'Own your limits with custom design that lets you manage all your bank account in one space.',
     image: images.bannerOne,
   },
 ];
 
-const WalkThrough = ({navigation}) => {
+const WalkThrough = () => {
   const ImageSwiper = (
     <View style={styleWalkThroughScreen.swiperContainer}>
       <Swiper
@@ -54,10 +49,11 @@ const WalkThrough = ({navigation}) => {
         dotStyle={styleWalkThroughScreen.swiperDotStyle}
         activeDotColor={COLORS.deepOrange}
         activeDotStyle={styleWalkThroughScreen.swiperActiveDotStyle}>
-        {Walkthrough.map(item => {
+        {Walkthrough.map((item, index) => {
           return (
             <View
-              key={item.id}
+            id={item.id}
+              key={index}
               style={styleWalkThroughScreen.swiperViewContainer}>
               <View style={styleWalkThroughScreen.swiperImgHolder}>
                 <Image
@@ -70,9 +66,9 @@ const WalkThrough = ({navigation}) => {
                 <Text style={styleWalkThroughScreen.swiperTextHeader}>
                   {item.header}
                 </Text>
-                <Text style={styleWalkThroughScreen.swiperTextSubtitle}>
+                {/* <Text style={styleWalkThroughScreen.swiperTextSubtitle}>
                   {item.title}
-                </Text>
+                </Text> */}
                 <Text style={styleWalkThroughScreen.swiperTextParagraph}>
                   {item.sub_title}
                 </Text>
@@ -81,51 +77,6 @@ const WalkThrough = ({navigation}) => {
           );
         })}
       </Swiper>
-    </View>
-  );
-
-  const renderButton = (
-    <View style={styleWalkThroughScreen.walkthroughButtonContainer}>
-      <TouchableOpacity
-        style={styleButtons.defaultButton}
-        onPress={() =>
-          navigation.navigate('AuthScreen', {
-            screen: 'BankAccountLogin',
-          })
-        }>
-        <Text style={styleButtons.defaultButtonText}>Get Started</Text>
-      </TouchableOpacity>
-
-      {/* <TouchableOpacity
-        style={styleButtons.defaultButton}
-        onPress={() =>
-          navigation.navigate('AuthScreen', {
-            screen: 'BankAccountLogin',
-          })
-        }>
-        <Text style={styleButtons.defaultButtonText}>
-          Login to Bank Account
-        </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styleButtons.defaultOutlineButton}
-        onPress={() =>
-          navigation.navigate('AuthScreen', {
-            screen: 'Login',
-          })
-        }>
-        <Text style={styleButtons.defaultOutlineText}>Login to QAPP</Text>
-      </TouchableOpacity> */}
-    </View>
-  );
-
-  const renderFooter = (
-    <View style={styleWalkThroughScreen.walkthroughFooter}>
-      <Text style={styleFooter.footerText}>
-        Are you a Bank?
-        <Text style={styleFooter.footerSecondaryText}>{''} Request a Demo</Text>
-      </Text>
     </View>
   );
 
@@ -143,8 +94,7 @@ const WalkThrough = ({navigation}) => {
         <StatusBar animated={true} barStyle="light-content" />
         <View style={styleWalkThroughScreen.walkthroughContainer}>
           {ImageSwiper}
-          {renderButton}
-          {/* {renderFooter} */}
+          <WalkThroughForm />
         </View>
       </SafeAreaView>
     </LinearGradient>

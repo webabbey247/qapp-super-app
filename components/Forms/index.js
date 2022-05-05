@@ -7,12 +7,16 @@ import QappLoginForm from './QappLoginForm';
 import SignUpForm from './SignUpForm';
 import DualOTPForm from './DualOTPForm';
 import ForgetPasswordForm from './ForgetPasswordForm';
-import OTPForm from './OTPForm';
 import BankAccountForm from './BankAccountForm';
 import NewPasswordForm from './NewPasswordForm';
 import DepositOperationForm from './DepositOperationForm';
 import WithdrawOperationsForm from './WithdrawOperationsForm';
 import TransferOperationForm from './TransferOperationForm';
+
+
+import OTPForm from './OTPForm';
+import WalkThroughForm from './WalkThroughForm';
+import PasswordLoginForm from './PasswordLoginForm';
 
 export {
   TransactionPinForm,
@@ -24,10 +28,13 @@ export {
   SignUpForm,
   DualOTPForm,
   ForgetPasswordForm,
-  OTPForm,
   BankAccountForm,
   NewPasswordForm,
   DepositOperationForm,
   WithdrawOperationsForm,
   TransferOperationForm,
+
+  OTPForm,
+  PasswordLoginForm,
+  WalkThroughForm
 };

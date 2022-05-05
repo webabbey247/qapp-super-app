@@ -67,10 +67,10 @@ const styleGeneral = StyleSheet.create({
   generalForgotPasswordWrapper: {
     paddingVertical: SIZES.padding * 1,
     paddingHorizontal: SIZES.padding * 2,
+    marginTop: SIZES.padding * 0.5,
   },
 
   generalForgotPasswordText: {
-    marginVertical: SIZES.padding * 2,
     color: COLORS.grayColor,
     ...FONTS.body3,
     textAlign: 'right',
@@ -165,20 +165,24 @@ const styleWalkThroughScreen = StyleSheet.create({
     width: SIZES.width,
     height: SIZES.height / 3,
   },
+
   swiperTextWrapper: {
     marginTop: SIZES.padding * 2,
     paddingHorizontal: SIZES.padding * 2,
   },
+
   swiperTextHeader: {
     ...FONTS.h1,
     color: COLORS.grayColor,
     textAlign: 'center',
   },
+
   swiperTextSubtitle: {
     ...FONTS.h1,
     color: COLORS.deepOrange,
     textAlign: 'center',
   },
+
   swiperTextParagraph: {
     marginTop: SIZES.padding * 1,
     ...FONTS.body3,
@@ -272,7 +276,7 @@ const styleAuthScreen = StyleSheet.create({
 const styleButtons = StyleSheet.create({
   defaultButton: {
     height: 60,
-    borderRadius: 10,
+    borderRadius: 5,
     backgroundColor: COLORS.deepOrange,
     alignItems: 'center',
     justifyContent: 'center',
@@ -281,7 +285,7 @@ const styleButtons = StyleSheet.create({
   secondaryButton: {
     // marginTop: SIZES.padding * 1,
     height: 60,
-    borderRadius: 10,
+    borderRadius: 5,
     backgroundColor: COLORS.darkCyan,
     alignItems: 'center',
     justifyContent: 'center',
@@ -290,7 +294,7 @@ const styleButtons = StyleSheet.create({
   textBlueButton: {
     width: 150,
     height: 55,
-    borderRadius: 10,
+    borderRadius: 5,
     backgroundColor: COLORS.breakerBay,
     alignItems: 'center',
     justifyContent: 'center',
@@ -300,7 +304,7 @@ const styleButtons = StyleSheet.create({
     marginLeft: SIZES.padding * 2,
     width: 150,
     height: 55,
-    borderRadius: 10,
+    borderRadius: 5,
     backgroundColor: COLORS.breakerBay,
     alignItems: 'center',
     justifyContent: 'center',
@@ -308,17 +312,17 @@ const styleButtons = StyleSheet.create({
 
   defaultButtonText: {
     color: COLORS.darkCyan,
-    ...FONTS.h4,
+    ...FONTS.body3,
   },
 
   secondaryButtonText: {
     color: COLORS.white,
-    ...FONTS.h4,
+    ...FONTS.body3,
   },
 
   textBlueButtonText: {
     color: COLORS.tangaroa,
-    ...FONTS.h4,
+    ...FONTS.body3,
   },
 
   defaultOutlineButton: {
@@ -395,29 +399,34 @@ const styleFormComponents = StyleSheet.create({
 
   phoneCodeContainer: {
     flexDirection: 'row',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   phoneCodeWrapper: {
-    width: 110,
+    width: 70,
     backgroundColor: COLORS.darkCyan,
     paddingHorizontal: SIZES.padding * 1,
-    height: 50,
+    height: 55,
     color: COLORS.grayColor,
-    borderTopLeftRadius: 10,
-    borderBottomLeftRadius: 10,
+    borderTopLeftRadius: 5,
+    borderBottomLeftRadius: 5,
     flexDirection: 'row',
     marginRight: 3,
-    ...FONTS.body3,
   },
 
   phoneCodeImgHolder: {
     justifyContent: 'center',
   },
+
   phoneCodeImg: {
     width: 25,
     height: 25,
     marginRight: 5,
+    marginLeft: 5,
   },
+
   phoneCodeTextHolder: {
     justifyContent: 'center',
     paddingHorizontal: 5,
@@ -443,10 +452,10 @@ const styleFormComponents = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.darkCyan,
     paddingHorizontal: SIZES.padding * 2,
-    height: 50,
+    height: 55,
     color: COLORS.grayColor,
-    borderTopRightRadius: 10,
-    borderBottomRightRadius: 10,
+    borderTopRightRadius: 5,
+    borderBottomRightRadius: 5,
     // borderRadius: 10,
     ...FONTS.body3,
   },
@@ -454,9 +463,9 @@ const styleFormComponents = StyleSheet.create({
   defaultTextInput: {
     backgroundColor: COLORS.darkCyan,
     paddingHorizontal: SIZES.padding * 2,
-    height: 50,
+    height: 55,
     color: COLORS.grayColor,
-    borderRadius: 10,
+    borderRadius: 5,
     ...FONTS.body3,
   },
 

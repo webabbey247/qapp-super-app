@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react';
+import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Image, TextInput} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
@@ -17,7 +17,7 @@ const NewPasswordForm = () => {
   const [confirmPassword, setConfirmPassword] = useState(false);
 
   return (
-    <Fragment>
+    <>
       <View style={styleFormComponents.formWrapper}>
         {/* Password */}
         <View style={{marginTop: SIZES.padding * 1.5}}>
@@ -82,7 +82,7 @@ const NewPasswordForm = () => {
           <Text style={styleButtons.defaultButtonText}>Continue</Text>
         </TouchableOpacity>
       </View>
-    </Fragment>
+    </>
   );
 };
 

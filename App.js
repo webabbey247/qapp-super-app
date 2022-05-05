@@ -13,7 +13,16 @@ import {
   NewPassword,
   FinalScreen,
 } from './screens/AuthScreen';
+
+import { Dashboard } from './screens/HomeScreen';
+
+
+
+
+
 import {ConsumerDashboard} from './screens/HomeScreen/ConsumerScreen';
+
+
 import {
   BankDashboard,
   Transaction,
@@ -64,9 +73,25 @@ const AuthStackScreen = () => {
         component={OnboardBankAccount}
       />
       <AuthStack.Screen name="ResetPassword" component={ResetPassword} />
-      <AuthStack.Screen name="NewPassword" component={NewPassword} />
-      <AuthStack.Screen name="FinalScreen" component={FinalScreen} />
+      {/* <AuthStack.Screen name="NewPassword" component={NewPassword} /> */}
+      {/* <AuthStack.Screen name="FinalScreen" component={FinalScreen} /> */}
     </AuthStack.Navigator>
+  );
+};
+
+
+//Main Stack  //
+const MainStack = createStackNavigator();
+const MainScreen = () => {
+  return (
+    <MainStack.Navigator
+      headerMode="none"
+      initialRouteName={'Dashboard'}>
+      <MainStack.Screen
+        name="Dashboard"
+        component={Dashboard}
+      />
+    </MainStack.Navigator>
   );
 };
 
@@ -127,6 +152,7 @@ const RootStackScreen = () => {
       initialRouteName={'LaunchStackScreen'}>
       <RootStack.Screen name="LaunchScreen" children={LaunchStackScreen} />
       <RootStack.Screen name="AuthScreen" children={AuthStackScreen} />
+      <RootStack.Screen name="MainScreen" children={MainScreen} />
       <RootStack.Screen name="QappUserScreen" children={QappUserScreen} />
       <RootStack.Screen name="BankFIScreen" children={BankFIScreen} />
     </RootStack.Navigator>

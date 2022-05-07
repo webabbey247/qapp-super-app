@@ -24,10 +24,8 @@ import {
 
 const SignUpForm = () => {
   const navigation = useNavigation();
-
   const [showPassword, setShowPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState(false);
-
   const [areaCode, setAreaCode] = useState([]);
   const [selectedAreaCode, setSelectedAreaCode] = useState('');
   const [modalVisbile, setModalVisible] = useState(false);

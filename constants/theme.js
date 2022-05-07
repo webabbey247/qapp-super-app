@@ -137,7 +137,6 @@ export const FONTS = {
   },
 };
 
-export const DUMMYDFODummNTS = {};
 
 const appTheme = {COLORS, SIZES, FONTS};
 

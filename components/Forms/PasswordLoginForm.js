@@ -104,13 +104,25 @@ const PasswordLoginForm = () => {
               </Text>
             </TouchableOpacity>
           </View>
-          <View style={styleAuthScreen.authButtonWrapper}>
+
+           <View style={styleAuthScreen.authButtonWrapper}>
+            <TouchableOpacity
+            onPress={() =>
+                navigation.navigate('MainScreen', {screen: 'Dashboard'})
+              }
+              style={styleButtons.defaultButton}>
+              <Text style={styleButtons.defaultButtonText}>Sign In</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* <View style={styleAuthScreen.authButtonWrapper}>
             <TouchableOpacity
               style={styleButtons.defaultButton}
               onPress={handleSubmit}>
               <Text style={styleButtons.defaultButtonText}>Sign In</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
+       
         </Fragment>
       )}
     </Formik>

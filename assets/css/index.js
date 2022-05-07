@@ -35,7 +35,7 @@ const styleGeneral = StyleSheet.create({
 
   generalHeaderText: {
     color: COLORS.grayColor,
-    ...FONTS.body2,
+    ...FONTS.h2,
   },
 
   generalHeaderParagraph: {
@@ -253,18 +253,18 @@ const styleAuthScreen = StyleSheet.create({
 
   authButtonWrapper: {
     margin: SIZES.padding,
-    paddingHorizontal: SIZES.padding * 2,
+    paddingHorizontal: SIZES.padding * 1.5,
     marginBottom: SIZES.padding * 2,
   },
 
   authOTPButtonWrapper: {
     margin: SIZES.padding,
-    paddingHorizontal: SIZES.padding * 2,
+    paddingHorizontal: SIZES.padding * 1.5,
   },
 
   authFooterWrapper: {
     marginTop: SIZES.padding * 2,
-    paddingHorizontal: SIZES.padding * 3,
+    paddingHorizontal: SIZES.padding * 1.5,
   },
 
   authOTPFooterWrapper: {
@@ -369,7 +369,7 @@ const styleFooter = StyleSheet.create({
 const styleFormComponents = StyleSheet.create({
   formWrapper: {
     marginTop: SIZES.padding * 3,
-    paddingHorizontal: SIZES.padding * 3,
+    paddingHorizontal: SIZES.padding * 2.5,
   },
 
   formLabel: {
@@ -521,9 +521,9 @@ const styleFormComponents = StyleSheet.create({
   inlinePinTextInput: {
     backgroundColor: COLORS.darkCyan,
     textAlign: 'center',
-    height: 30,
-    width: 30,
-    color: COLORS.deepBlue,
+    height: 35,
+    width: 35,
+    color: COLORS.white,
     borderRadius: 20,
     ...FONTS.body3,
     marginRight: SIZES.padding * 1.5,
@@ -854,8 +854,9 @@ const styleBankDashboard = StyleSheet.create({
   dashboardOperationContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     marginVertical: SIZES.padding * 0.5,
+
   },
   dashboardOperationWrapper: {
     flexDirection: 'column',

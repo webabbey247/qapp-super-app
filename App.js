@@ -1,7 +1,7 @@
-import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
-import {SplashScreen, WalkThrough} from './screens/LaunchScreen';
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import { SplashScreen, WalkThrough } from "./screens/LaunchScreen";
 import {
   Login,
   OTPAuth,
@@ -12,38 +12,21 @@ import {
   ResetPassword,
   NewPassword,
   FinalScreen,
-} from './screens/AuthScreen';
-
-import { Dashboard } from './screens/HomeScreen';
-
-
-
-
-
-import {ConsumerDashboard} from './screens/HomeScreen/ConsumerScreen';
-
+} from "./screens/AuthScreen";
 
 import {
-  BankDashboard,
-  Transaction,
-  TransactionInfo,
-  AccountGrid,
-  CardGrid,
-  CardOperations,
-  Settings,
-  GetHelp,
-  ChangeQA,
-  ChangePin,
-  DepositOperations,
-  WithdrawalOperations,
-  TransferOperations,
-} from './screens/HomeScreen/BankFIScreen';
+  Dashboard,
+  DonationScreen,
+  AddDonation,
+  InitiateDonation,
+  SummaryScreen
+} from "./screens/HomeScreen";
 
 const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    border: 'transparent',
+    border: "transparent",
   },
 };
 
@@ -51,7 +34,7 @@ const theme = {
 const LaunchStack = createStackNavigator();
 const LaunchStackScreen = () => {
   return (
-    <LaunchStack.Navigator headerMode="none" initialRouteName={'SplashScreen'}>
+    <LaunchStack.Navigator headerMode="none" initialRouteName={"SplashScreen"}>
       <LaunchStack.Screen name="SplashScreen" component={SplashScreen} />
       <LaunchStack.Screen name="WalkThrough" component={WalkThrough} />
     </LaunchStack.Navigator>
@@ -62,7 +45,7 @@ const LaunchStackScreen = () => {
 const AuthStack = createStackNavigator();
 const AuthStackScreen = () => {
   return (
-    <AuthStack.Navigator headerMode="none" initialRouteName={'Login'}>
+    <AuthStack.Navigator headerMode="none" initialRouteName={"Login"}>
       <AuthStack.Screen name="Login" component={Login} />
       <AuthStack.Screen name="OTPAuth" component={OTPAuth} />
       <AuthStack.Screen name="SignUp" component={SignUp} />
@@ -73,71 +56,23 @@ const AuthStackScreen = () => {
         component={OnboardBankAccount}
       />
       <AuthStack.Screen name="ResetPassword" component={ResetPassword} />
-      {/* <AuthStack.Screen name="NewPassword" component={NewPassword} /> */}
-      {/* <AuthStack.Screen name="FinalScreen" component={FinalScreen} /> */}
+      <AuthStack.Screen name="NewPassword" component={NewPassword} />
+      <AuthStack.Screen name="FinalScreen" component={FinalScreen} />
     </AuthStack.Navigator>
   );
 };
-
 
 //Main Stack  //
 const MainStack = createStackNavigator();
 const MainScreen = () => {
   return (
-    <MainStack.Navigator
-      headerMode="none"
-      initialRouteName={'Dashboard'}>
-      <MainStack.Screen
-        name="Dashboard"
-        component={Dashboard}
-      />
+    <MainStack.Navigator headerMode="none" initialRouteName={"Dashboard"}>
+      <MainStack.Screen name="Dashboard" component={Dashboard} />
+      <MainStack.Screen name="DonationScreen" component={DonationScreen} />
+      <MainStack.Screen name="AddDonation" component={AddDonation} />
+      <MainStack.Screen name="InitiateDonation" component={InitiateDonation} />
+      <MainStack.Screen name="SummaryScreen" component={SummaryScreen} />
     </MainStack.Navigator>
-  );
-};
-
-//QAPP Stack  //
-const QappUserStack = createStackNavigator();
-const QappUserScreen = () => {
-  return (
-    <QappUserStack.Navigator
-      headerMode="none"
-      initialRouteName={'ConsumerDashboard'}>
-      <QappUserStack.Screen
-        name="ConsumerDashboard"
-        component={ConsumerDashboard}
-      />
-    </QappUserStack.Navigator>
-  );
-};
-
-//Bank FI Stack  //
-const BankFIStack = createStackNavigator();
-const BankFIScreen = () => {
-  return (
-    <BankFIStack.Navigator headerMode="none" initialRouteName={'BankDashboard'}>
-      <BankFIStack.Screen name="BankDashboard" component={BankDashboard} />
-      <BankFIStack.Screen
-        name="DepositOperations"
-        component={DepositOperations}
-      />
-      <BankFIStack.Screen
-        name="WithdrawalOperations"
-        component={WithdrawalOperations}
-      />
-      <BankFIStack.Screen
-        name="TransferOperations"
-        component={TransferOperations}
-      />
-      <BankFIStack.Screen name="Transaction" component={Transaction} />
-      <BankFIStack.Screen name="TransactionInfo" component={TransactionInfo} />
-      <BankFIStack.Screen name="AccountGrid" component={AccountGrid} />
-      <BankFIStack.Screen name="CardGrid" component={CardGrid} />
-      <BankFIStack.Screen name="CardOperations" component={CardOperations} />
-      <BankFIStack.Screen name="Settings" component={Settings} />
-      <BankFIStack.Screen name="GetHelp" component={GetHelp} />
-      <BankFIStack.Screen name="ChangeQA" component={ChangeQA} />
-      <BankFIStack.Screen name="ChangePin" component={ChangePin} />
-    </BankFIStack.Navigator>
   );
 };
 
@@ -149,12 +84,11 @@ const RootStackScreen = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={'LaunchStackScreen'}>
+      initialRouteName={"LaunchStackScreen"}
+    >
       <RootStack.Screen name="LaunchScreen" children={LaunchStackScreen} />
       <RootStack.Screen name="AuthScreen" children={AuthStackScreen} />
       <RootStack.Screen name="MainScreen" children={MainScreen} />
-      <RootStack.Screen name="QappUserScreen" children={QappUserScreen} />
-      <RootStack.Screen name="BankFIScreen" children={BankFIScreen} />
     </RootStack.Navigator>
   );
 };

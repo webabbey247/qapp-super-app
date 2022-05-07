@@ -17,6 +17,7 @@ import TransferOperationForm from './TransferOperationForm';
 import OTPForm from './OTPForm';
 import WalkThroughForm from './WalkThroughForm';
 import PasswordLoginForm from './PasswordLoginForm';
+import DonationSearchForm from './DonationSearchForm';
 
 export {
   TransactionPinForm,
@@ -36,5 +37,6 @@ export {
 
   OTPForm,
   PasswordLoginForm,
-  WalkThroughForm
+  WalkThroughForm,
+  DonationSearchForm
 };

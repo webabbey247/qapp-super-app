@@ -29,12 +29,14 @@ const Betting = require('../assets/icons/betting.png');
 const Games = require('../assets/icons/games.png');
 const FXTransfer = require('../assets/icons/fx_transfer.png');
 const Donations = require('../assets/icons/donations.png');
+const DonationIcon = require('../assets/icons/donate.png');
 const Loan = require('../assets/icons/loan.png');
 const QRCode = require('../assets/icons/qr_code.png');
 const UtilityIcon = require('../assets/icons/utility.png');
 const closeIcon = require('../assets/icons/close.png');
 const fingerPrintIcon = require('../assets/icons/fingerprint.png');
 const faceIDIcon = require('../assets/icons/face_id_outline.png');
+const donationIcon = require('../assets/icons/add_donation.png');
 
 export default {
   fingerPrintIcon,
@@ -44,6 +46,7 @@ export default {
   UtilityIcon,
   Loan,
   Donations,
+  DonationIcon,
   QRCode,
   Games,
   FXTransfer,
@@ -74,4 +77,6 @@ export default {
   InfoIcon,
   FileIcon,
   CommentDots,
+  
+  donationIcon,
 };

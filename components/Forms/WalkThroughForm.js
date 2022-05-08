@@ -145,7 +145,7 @@ const WalkThroughForm = () => {
           onPress={() =>
             navigation.navigate("AuthScreen", {
               screen: "OTPAuth",
-              typeUrl: "Home"
+              typeUrl: "walkthrough",
             })
           }
         >

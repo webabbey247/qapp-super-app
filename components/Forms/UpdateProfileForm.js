@@ -9,23 +9,20 @@ import {
   TouchableWithoutFeedback,
   FlatList,
 } from 'react-native';
-import {Formik} from 'formik';
-import * as Yup from 'yup';
 import {useNavigation} from '@react-navigation/native';
-
-import {COLORS, SIZES, icons, FONTS} from '../../constants';
+import {COLORS, SIZES, icons, FONTS, images} from '../../constants';
+import { ProfileStyles } from '../../assets/css/ProfileStyles';
 
 import {
   styleGeneral,
   styleAuthScreen,
   styleFormComponents,
   styleButtons,
+  styleSettingsScreen
 } from '../../assets/css';
 
-const SignUpForm = () => {
+const UpdateProfileForm = () => {
   const navigation = useNavigation();
-  const [showPassword, setShowPassword] = useState(false);
-  const [confirmPassword, setConfirmPassword] = useState(false);
   const [areaCode, setAreaCode] = useState([]);
   const [selectedAreaCode, setSelectedAreaCode] = useState('');
   const [modalVisbile, setModalVisible] = useState(false);
@@ -96,35 +93,35 @@ const SignUpForm = () => {
     </Modal>
   );
 
-  const LoginValidationSchema = Yup.object().shape({
-    phoneNumber: Yup.string()
-      .required('required')
-      .matches(
-        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-        'Kindly provide a valid Phone number',
-      )
-      .min(10, 'Phone number must be atleast the 10 characters long ')
-      .max(10, 'Phone number must be atleast the 10 characters long'),
-    emailAddress: Yup.string()
-      .email('Kindly provide a valid email address')
-      .required('Email address is required  '),
-    password: Yup.string()
-      .min(8, ({min}) => `Password must be atleast ${min} characters`)
-      .required('Password is required')
-      .matches(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-        'Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character',
-      ),
-  });
-
   return (
     <Fragment>
       <View style={styleFormComponents.formWrapper}>
+
+        {/* Profile Photo */}
+        <View style={{marginTop: SIZES.padding * 1.5}}>
+        <View style={ProfileStyles.ProfileIconFormWrapper}>
+        <View style={ProfileStyles.ProfileIconWrapper}>
+            <Image
+              source={images.dummyUserIcon}
+              style={ProfileStyles.ProfileIcon}
+            />
+          </View>
+          <TouchableOpacity style={ProfileStyles.profileUploadIconWrapper}>
+            <Image
+              source={icons.CameraIcon}
+              style={ProfileStyles.profileUploadIcon}
+            />
+          </TouchableOpacity>
+        </View>
+        </View>
+
+
+
         {/* First Name */}
         <View style={{marginTop: SIZES.padding * 1.5}}>
           <TextInput
             style={styleFormComponents.defaultTextInput}
-            placeholder=" First Name"
+            placeholder=" First name"
             placeholderTextColor={COLORS.textBlue}
             selectionColor={COLORS.textBlue}
           />
@@ -134,31 +131,32 @@ const SignUpForm = () => {
         <View style={{marginTop: SIZES.padding * 1.5}}>
           <TextInput
             style={styleFormComponents.defaultTextInput}
-            placeholder=" Last Name"
+            placeholder=" Last name"
             placeholderTextColor={COLORS.textBlue}
             selectionColor={COLORS.textBlue}
           />
         </View>
 
         {/* Mobile Number */}
-        <View style={{marginTop: SIZES.padding * 1.5}}>
+         <View style={{ marginTop: SIZES.padding * 1.5 }}>
           <View style={styleFormComponents.phoneCodeContainer}>
             {/* Country Code */}
             <TouchableOpacity
               style={styleFormComponents.phoneCodeWrapper}
-              onPress={() => setModalVisible(true)}>
+              onPress={() => setModalVisible(true)}
+            >
               <View style={styleFormComponents.phoneCodeImgHolder}>
                 <Image
-                  source={{uri: selectedAreaCode.flag}}
+                  source={{ uri: selectedAreaCode.flag }}
                   resizeMode="contain"
                   style={styleFormComponents.phoneCodeImg}
                 />
               </View>
-              <View style={styleFormComponents.phoneCodeTextHolder}>
+              {/* <View style={styleFormComponents.phoneCodeTextHolder}>
                 <Text style={styleFormComponents.phoneCodeText}>
                   {selectedAreaCode?.dialCode}
                 </Text>
-              </View>
+              </View> */}
               <View style={styleFormComponents.phoneCodeDropDownImgHolder}>
                 <Image
                   source={icons.DropDown}
@@ -168,7 +166,7 @@ const SignUpForm = () => {
             </TouchableOpacity>
             <TextInput
               style={styleFormComponents.phoneCodeTextInput}
-              placeholder="Phone Number"
+              placeholder="Phone number"
               placeholderTextColor={COLORS.textBlue}
               selectionColor={COLORS.textBlue}
               returnKeyType="next"
@@ -176,67 +174,16 @@ const SignUpForm = () => {
             />
           </View>
         </View>
-
         {/* Email Address */}
         <View style={{marginTop: SIZES.padding * 1.5}}>
           <TextInput
             style={styleFormComponents.defaultTextInput}
-            placeholder="Email Address"
+            placeholder="Email address"
             placeholderTextColor={COLORS.textBlue}
             selectionColor={COLORS.textBlue}
           />
         </View>
 
-        {/* Password */}
-        <View style={{marginTop: SIZES.padding * 1.5}}>
-          <TextInput
-            style={styleFormComponents.defaultTextInput}
-            placeholder="Password"
-            placeholderTextColor={COLORS.textBlue}
-            selectionColor={COLORS.textBlue}
-            secureTextEntry={!showPassword}
-            returnKeyType="done"
-          />
-
-          <TouchableOpacity
-            style={styleFormComponents.defaultTextInputIconHolder}
-            onPress={() => setShowPassword(!showPassword)}>
-            <Image
-              source={showPassword ? icons.disabled_eyes : icons.eyes}
-              style={styleFormComponents.defaultTextInputIcon}
-            />
-          </TouchableOpacity>
-        </View>
-
-        {/* Confirm Password */}
-        <View style={{marginTop: SIZES.padding * 1.5}}>
-          <TextInput
-            style={styleFormComponents.defaultTextInput}
-            placeholder="Confirm Password"
-            placeholderTextColor={COLORS.textBlue}
-            selectionColor={COLORS.textBlue}
-            secureTextEntry={!confirmPassword}
-            returnKeyType="done"
-          />
-          <TouchableOpacity
-            style={styleFormComponents.defaultTextInputIconHolder}
-            onPress={() => setConfirmPassword(!confirmPassword)}>
-            <Image
-              source={confirmPassword ? icons.disabled_eyes : icons.eyes}
-              style={styleFormComponents.defaultTextInputIcon}
-            />
-          </TouchableOpacity>
-        </View>
-
-        {/* Referral Code */}
-        <View style={{marginTop: SIZES.padding * 1.5}}>
-          <TextInput
-            style={styleFormComponents.defaultTextInput}
-            placeholder="Referral Code"
-            placeholderTextColor={COLORS.textBlue}
-            selectionColor={COLORS.textBlue}
-          />
-        </View>
       </View>
       <View
         style={[
@@ -246,9 +193,9 @@ const SignUpForm = () => {
         <TouchableOpacity
           style={styleButtons.defaultButton}
           onPress={() =>
-            navigation.navigate('OTPSignUp', {typeUrl: 'Register'})
+            navigation.navigate('Settings')
           }>
-          <Text style={styleButtons.defaultButtonText}>Continue</Text>
+          <Text style={styleButtons.defaultButtonText}>Update Profile</Text>
         </TouchableOpacity>
       </View>
 
@@ -257,4 +204,4 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+export default UpdateProfileForm;

@@ -49,7 +49,8 @@ const ResetPassword = ({navigation}) => {
             <CustomHeader
               type="primary"
               title="Forget Password"
-              subtitle="Enter the email or phone number associated with your account to reset your password."
+              subtitle="Enter  email address associated with your 
+              account to reset your password."
             />
             <ForgetPasswordForm />
           </ScrollView>

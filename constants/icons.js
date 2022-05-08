@@ -37,6 +37,7 @@ const closeIcon = require('../assets/icons/close.png');
 const fingerPrintIcon = require('../assets/icons/fingerprint.png');
 const faceIDIcon = require('../assets/icons/face_id_outline.png');
 const donationIcon = require('../assets/icons/add_donation.png');
+const CameraIcon = require('../assets/icons/camera.png');
 
 export default {
   fingerPrintIcon,
@@ -79,4 +80,5 @@ export default {
   CommentDots,
   
   donationIcon,
+  CameraIcon,
 };

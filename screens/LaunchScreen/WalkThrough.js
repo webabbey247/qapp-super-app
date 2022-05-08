@@ -11,7 +11,6 @@ import {
 import Swiper from 'react-native-swiper';
 import LinearGradient from 'react-native-linear-gradient';
 import { WalkThroughForm } from '../../components/Forms';
-
 import {COLORS, images} from '../../constants';
 import {
   styleWalkThroughScreen,
@@ -20,21 +19,21 @@ import {
 const Walkthrough = [
   {
     id: 1,
-    header: 'One account for every bank',
+    header: 'One Account For Every Bank',
     sub_title:
       'Own your limits with custom design that lets you manage all your bank account in one space.',
     image: images.bannerOne,
   },
   {
     id: 2,
-    header: 'One account for every bank',
+    header: 'One Account For Every Bank',
     sub_title:
       'Own your limits with custom design that lets you manage all your bank account in one space.',
     image: images.bannerOne,
   },
   {
     id: 3,
-    header: 'One account for every bank',
+    header: 'One Account For Every Bank',
     sub_title:
       'Own your limits with custom design that lets you manage all your bank account in one space.',
     image: images.bannerOne,

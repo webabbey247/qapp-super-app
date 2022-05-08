@@ -95,6 +95,7 @@ const PasswordLoginForm = () => {
               ) : null}
             </View>
 
+        
             {/* Forget Password */}
             <TouchableOpacity
               style={styleGeneral.generalForgotPasswordWrapper}
@@ -104,6 +105,8 @@ const PasswordLoginForm = () => {
               </Text>
             </TouchableOpacity>
           </View>
+
+          
 
            <View style={styleAuthScreen.authButtonWrapper}>
             <TouchableOpacity

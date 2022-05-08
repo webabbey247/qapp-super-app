@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   KeyboardAvoidingView,
@@ -9,10 +8,9 @@ import {
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {COLORS} from '../../constants';
 import {CustomHeader} from '../../components/common';
-import {OTPForm} from '../../components/Forms';
+import { OTPForm } from '../../components/Forms';
 
-const OTPAuth = ({typeUrl}) => {
-  // const {typeUrl} = route.params;
+const OTPAuth = () => {  
   return (
     <SafeAreaView
       behavior={Platform.OS === 'ios' ? 'padding' : null}
@@ -30,7 +28,7 @@ const OTPAuth = ({typeUrl}) => {
             subtitle="OTP has been sent to you on your mobile number. Please enter it
             below."
           />
-          <OTPForm typeUrl={typeUrl} />
+          <OTPForm />
         </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>

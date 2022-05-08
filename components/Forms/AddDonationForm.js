@@ -1,18 +1,21 @@
 import React from "react";
 import { TouchableOpacity, Text, View, Image, TextInput } from "react-native";
-import {useNavigation} from '@react-navigation/native';
-import { styleFormComponents, styleAuthScreen, styleButtons } from "../../assets/css";
+import { useNavigation } from "@react-navigation/native";
+import {
+  styleFormComponents,
+  styleAuthScreen,
+  styleButtons,
+} from "../../assets/css";
 import { COLORS, SIZES, icons } from "../../constants";
 
-
 const AddDonationForm = () => {
-const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
     <>
       <View style={styleFormComponents.formWrapper}>
         {/* Title */}
         <View>
-        <Text style={styleFormComponents.formLabel}>Title</Text>
+          <Text style={styleFormComponents.formLabel}>Title</Text>
           <TextInput
             style={styleFormComponents.defaultTextInput}
             placeholder="Title"
@@ -23,7 +26,7 @@ const navigation = useNavigation();
 
         {/* Amount */}
         <View style={{ marginTop: SIZES.padding * 1 }}>
-        <Text style={styleFormComponents.formLabel}>Amount</Text>
+          <Text style={styleFormComponents.formLabel}>Amount</Text>
           <TextInput
             style={styleFormComponents.defaultTextInput}
             placeholder="Amount"
@@ -34,7 +37,7 @@ const navigation = useNavigation();
 
         {/* Closing Date & Time */}
         <View style={{ marginTop: SIZES.padding * 1 }}>
-        <Text style={styleFormComponents.formLabel}>Closing Date & Time</Text>
+          <Text style={styleFormComponents.formLabel}>Closing Date & Time</Text>
           <TextInput
             style={styleFormComponents.defaultTextInput}
             placeholder=""
@@ -55,7 +58,7 @@ const navigation = useNavigation();
 
         {/* Recieving Bank */}
         <View style={{ marginTop: SIZES.padding * 1 }}>
-        <Text style={styleFormComponents.formLabel}>Recieving Bank</Text>
+          <Text style={styleFormComponents.formLabel}>Recieving Bank</Text>
           <TextInput
             style={styleFormComponents.defaultTextInput}
             placeholder="Select Bank"
@@ -76,7 +79,7 @@ const navigation = useNavigation();
 
         {/* Account Number */}
         <View style={{ marginTop: SIZES.padding * 1 }}>
-        <Text style={styleFormComponents.formLabel}>Account Number</Text>
+          <Text style={styleFormComponents.formLabel}>Account Number</Text>
           <TextInput
             style={styleFormComponents.defaultTextInput}
             placeholder="Account Number"
@@ -84,16 +87,19 @@ const navigation = useNavigation();
             selectionColor={COLORS.textBlue}
           />
         </View>
-
-    
       </View>
       <View
         style={[
           styleAuthScreen.authButtonWrapper,
-          {marginVertical: SIZES.padding * 2},
-        ]}>
+          { marginVertical: SIZES.padding * 2 },
+        ]}
+      >
         <TouchableOpacity
-          style={styleButtons.defaultButton} onPress={() => navigation.navigate('DonationScreen')}>
+          style={styleButtons.defaultButton}
+          onPress={() =>
+            navigation.navigate("SummaryScreen", { typeUrl: "createLink" })
+          }
+        >
           <Text style={styleButtons.defaultButtonText}>Create Donation</Text>
         </TouchableOpacity>
       </View>

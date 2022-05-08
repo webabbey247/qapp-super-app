@@ -5,13 +5,15 @@ import { SplashScreen, WalkThrough } from "./screens/LaunchScreen";
 import {
   Login,
   OTPAuth,
-  SignUp,
-  OTPSignUp,
-  BankAccountLogin,
-  OnboardBankAccount,
   ResetPassword,
   NewPassword,
-  FinalScreen,
+
+  // SignUp,
+  // OTPSignUp,
+  // BankAccountLogin,
+  // OnboardBankAccount,
+  // ResetPassword,
+  // FinalScreen,
 } from "./screens/AuthScreen";
 
 import {
@@ -19,7 +21,10 @@ import {
   DonationScreen,
   AddDonation,
   InitiateDonation,
-  SummaryScreen
+  SummaryScreen,
+  Settings,
+  Profile,
+  UpdatePassword,
 } from "./screens/HomeScreen";
 
 const theme = {
@@ -48,16 +53,16 @@ const AuthStackScreen = () => {
     <AuthStack.Navigator headerMode="none" initialRouteName={"Login"}>
       <AuthStack.Screen name="Login" component={Login} />
       <AuthStack.Screen name="OTPAuth" component={OTPAuth} />
-      <AuthStack.Screen name="SignUp" component={SignUp} />
-      <AuthStack.Screen name="OTPSignUp" component={OTPSignUp} />
-      <AuthStack.Screen name="BankAccountLogin" component={BankAccountLogin} />
-      <AuthStack.Screen
-        name="OnboardBankAccount"
-        component={OnboardBankAccount}
-      />
       <AuthStack.Screen name="ResetPassword" component={ResetPassword} />
       <AuthStack.Screen name="NewPassword" component={NewPassword} />
-      <AuthStack.Screen name="FinalScreen" component={FinalScreen} />
+      {/* <AuthStack.Screen name="SignUp" component={SignUp} /> */}
+      {/* <AuthStack.Screen name="OTPSignUp" component={OTPSignUp} /> */}
+      {/* <AuthStack.Screen name="BankAccountLogin" component={BankAccountLogin} /> */}
+      {/* <AuthStack.Screen
+        name="OnboardBankAccount"
+        component={OnboardBankAccount}
+      /> */}
+      {/* <AuthStack.Screen name="FinalScreen" component={FinalScreen} /> */}
     </AuthStack.Navigator>
   );
 };
@@ -72,6 +77,9 @@ const MainScreen = () => {
       <MainStack.Screen name="AddDonation" component={AddDonation} />
       <MainStack.Screen name="InitiateDonation" component={InitiateDonation} />
       <MainStack.Screen name="SummaryScreen" component={SummaryScreen} />
+      <MainStack.Screen name="Settings" component={Settings} />
+      <MainStack.Screen name="Profile" component={Profile} />
+      <MainStack.Screen name="UpdatePassword" component={UpdatePassword} />
     </MainStack.Navigator>
   );
 };

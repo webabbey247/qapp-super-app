@@ -11,7 +11,7 @@ import { FONTS, COLORS, SIZES, icons, images } from "../../constants";
 import LinearGradient from "react-native-linear-gradient";
 import { styleGeneral } from "../../assets/css";
 import { CustomHeader } from "../../components/common";
-import AddDonationForm from "../../components/Forms/AddDonationForm";
+import {AddDonationForm} from "../../components/Forms";
 
 const AddDonation = ({ navigation }) => {
   const renderHeader = (

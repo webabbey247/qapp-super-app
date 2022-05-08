@@ -31,7 +31,7 @@ export const DonationSummaryScreen = () => {
                   textAlign: "center",
                 }}
               >
-               Donation Successful
+              Donation Created
               </Text>
             </View>
 
@@ -58,8 +58,7 @@ export const DonationSummaryScreen = () => {
                   paddingHorizontal: SIZES.padding * 6,
                 }}
               >
-                Transferred to RCCG Inc
-                <Text>(First Bank)</Text>
+               Donation link for RCCG Lekki Building
               </Text>
               <Text
                 style={{
@@ -73,7 +72,7 @@ export const DonationSummaryScreen = () => {
                   letterSpacing: -1.5,
                 }}
               >
-                N5,000.00
+               http://surl.li/bvuef
               </Text>
               <Text
                 style={{
@@ -87,7 +86,7 @@ export const DonationSummaryScreen = () => {
                   letterSpacing: 1,
                 }}
               >
-                Transaction ID
+                Closing Date &amp; Time
               </Text>
               <Text
                 style={{
@@ -101,7 +100,8 @@ export const DonationSummaryScreen = () => {
                   letterSpacing: 1,
                 }}
               >
-                012749027493030375885
+                
+                June 12, 2022, 2:00pm
               </Text>
             </View>
 

@@ -15,8 +15,7 @@ import {
   styleFooter,
 } from "../../assets/css";
 
-const OTPForm = ({ typeUrl }) => {
-  // const {typeUrl} = route.params;
+const OTPForm = ({typeUrl}) => {
   const navigation = useNavigation();
 
   const renderFooter = (
@@ -32,7 +31,7 @@ const OTPForm = ({ typeUrl }) => {
   );
 
   return (
-    <Fragment>
+    <>
       <View style={styleFormComponents.inlineOTPContainer}>
         <View style={styleFormComponents.inlineOTPWrapper}>
           <TextInput
@@ -85,17 +84,38 @@ const OTPForm = ({ typeUrl }) => {
         </View>
         {renderFooter}
       </View>
+
       <View style={styleAuthScreen.authOTPButtonWrapper}>
-        <TouchableOpacity
-          style={styleButtons.secondaryButton}
-          onPress={() =>
-            navigation.navigate('Login')
-          }>
-          <Text style={styleButtons.secondaryButtonText}>Continue</Text>
-        </TouchableOpacity>
-        
-      </View>
-    </Fragment>
+          <TouchableOpacity
+            style={styleButtons.secondaryButton}
+            onPress={() => navigation.navigate("Login")}
+          >
+            <Text style={styleButtons.secondaryButtonText}>Continue</Text>
+          </TouchableOpacity>
+        </View>
+
+      {typeUrl === "walkthrough" && (
+        <View style={styleAuthScreen.authOTPButtonWrapper}>
+          <TouchableOpacity
+            style={styleButtons.secondaryButton}
+            onPress={() => navigation.navigate("Login")}
+          >
+            <Text style={styleButtons.secondaryButtonText}>Continue</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+
+      {typeUrl === "reset" && (
+        <View style={styleAuthScreen.authOTPButtonWrapper}>
+          <TouchableOpacity
+            style={styleButtons.secondaryButton}
+            onPress={() => navigation.navigate("Login")}
+          >
+            <Text style={styleButtons.secondaryButtonText}>Continue</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+    </>
   );
 };
 

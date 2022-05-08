@@ -148,7 +148,7 @@ const InitiateDonationForm = () => {
                 <TouchableOpacity
                   onPress={() =>
                     navigation.navigate("SummaryScreen",{
-                      typeUrl: "donation",
+                      typeUrl: "donateFunds",
                     })
                   }
                 >
@@ -164,7 +164,7 @@ const InitiateDonationForm = () => {
                 <TouchableOpacity
                   onPress={() =>
                     navigation.navigate("SummaryScreen",{
-                      typeUrl: "donation",
+                      typeUrl: "donateFunds",
                     })
                   }
                 >

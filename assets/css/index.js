@@ -65,9 +65,8 @@ const styleGeneral = StyleSheet.create({
   },
 
   generalForgotPasswordWrapper: {
-    paddingVertical: SIZES.padding * 1,
     paddingHorizontal: SIZES.padding * 2,
-    marginTop: SIZES.padding * 0.5,
+    paddingVertical: SIZES.padding * 1,
   },
 
   generalForgotPasswordText: {
@@ -375,7 +374,7 @@ const styleFormComponents = StyleSheet.create({
   formLabel: {
     color: COLORS.grayColor,
     ...FONTS.body6,
-    marginVertical: SIZES.padding * 1,
+    marginBottom: SIZES.padding * 1,
   },
 
   formCenterLabel: {
@@ -472,6 +471,14 @@ const styleFormComponents = StyleSheet.create({
   defaultTextInputIconHolder: {
     position: 'absolute',
     right: 5,
+    bottom: 0,
+    width: 30,
+    height: 30,
+  },
+
+  defaultTextInputHolder: {
+    position: 'absolute',
+    right: 20,
     bottom: 0,
     width: 30,
     height: 30,

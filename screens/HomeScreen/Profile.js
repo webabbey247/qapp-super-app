@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   View,
@@ -9,19 +10,25 @@ import {
   Image,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {COLORS, icons} from '../../../../constants';
+import {COLORS, icons} from '../../constants';
+import {styleGeneral} from '../../assets/css';
 import LinearGradient from 'react-native-linear-gradient';
-import {WithdrawOperationsForm} from '../../../../components/Forms';
-import {styleGeneral} from '../../../../assets/css';
 
-const WithdrawalOperations = ({navigation}) => {
+import {CustomHeader} from '../../components/common';
+import { UpdateProfileForm } from '../../components/Forms';
+
+
+const Profile = ({navigation}) => {
+
   const renderHeader = (
     <TouchableOpacity
       style={styleGeneral.generalHeaderContainer}
-      onPress={() => navigation.navigate('BankDashboard')}>
+      onPress={() =>
+        navigation.navigate('Settings')
+      }>
       <View style={styleGeneral.generalHeaderImgHolder}>
         <Image
-          source={icons.closeIcon}
+          source={icons.chevronLeft}
           resizeMode="contain"
           style={styleGeneral.generalHeaderImg}
         />
@@ -31,7 +38,7 @@ const WithdrawalOperations = ({navigation}) => {
 
   return (
     <LinearGradient
-      colors={[COLORS.primary, COLORS.progressProfile]}
+      colors={[COLORS.deepBlue, COLORS.progressProfile]}
       start={{x: 3, y: 1}}
       end={{x: 1, y: 3}}
       style={{
@@ -43,8 +50,13 @@ const WithdrawalOperations = ({navigation}) => {
         <KeyboardAvoidingView style={{flex: 1}}>
           <StatusBar animated={true} barStyle="light-content" />
           {renderHeader}
-          <ScrollView style={{flex: 1}}>
-            <WithdrawOperationsForm />
+          <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
+            <CustomHeader
+              type="primary"
+              title="Profile Information"
+              subtitle="A little description here"
+            />
+            <UpdateProfileForm />
           </ScrollView>
         </KeyboardAvoidingView>
       </SafeAreaView>
@@ -52,4 +64,4 @@ const WithdrawalOperations = ({navigation}) => {
   );
 };
 
-export default WithdrawalOperations;
+export default Profile;

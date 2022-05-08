@@ -11,13 +11,14 @@ import { FONTS, COLORS, SIZES, icons, images } from "../../constants";
 import LinearGradient from "react-native-linear-gradient";
 import { styleGeneral } from "../../assets/css";
 import { CustomHeader } from "../../components/common";
-import {InitiateDonationForm} from "../../components/Forms";
+import {UpdatePasswordForm} from "../../components/Forms";
 
-const InitiateDonation = ({ navigation }) => {
+
+const UpdatePassword = ({ navigation }) => {
   const renderHeader = (
     <TouchableOpacity
       style={styleGeneral.generalHeaderContainer}
-      onPress={() => navigation.navigate("DonationScreen")}
+      onPress={() => navigation.navigate("Settings")}
     >
       <View style={styleGeneral.generalHeaderImgHolder}>
         <Image
@@ -48,10 +49,10 @@ const InitiateDonation = ({ navigation }) => {
           <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
             <CustomHeader
               type="primary"
-              title="Donation"
-              subtitle="RCCG Lekki Building"
+              title="Change Password"
+              subtitle="Little content here and there..."
             />
-            <InitiateDonationForm />
+            <UpdatePasswordForm />
           </ScrollView>
         </SafeAreaView>
       </LinearGradient>
@@ -59,4 +60,4 @@ const InitiateDonation = ({ navigation }) => {
   );
 };
 
-export default InitiateDonation;
+export default UpdatePassword;

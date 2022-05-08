@@ -78,7 +78,7 @@ const NewPasswordForm = () => {
         ]}>
         <TouchableOpacity
           style={styleButtons.defaultButton}
-          onPress={() => navigation.navigate('FinalScreen')}>
+          onPress={() => console.log('New password initiated')}>
           <Text style={styleButtons.defaultButtonText}>Continue</Text>
         </TouchableOpacity>
       </View>

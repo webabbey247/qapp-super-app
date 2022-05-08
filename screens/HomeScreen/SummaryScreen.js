@@ -9,15 +9,15 @@ import {
   Image,
 } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
-import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { FONTS, COLORS, SIZES, icons } from "../../constants";
+import {COLORS, icons } from "../../constants";
 import { styleGeneral } from "../../assets/css";
-
 import { DonationSummaryScreen } from "../../components/Donation/DonationSummaryScreen";
+import { DonationPaymentScreen } from "../../components/Donation/DonationPaymentScreen";
 
-const SummaryScreen = ({route }) => {
-    const {typeUrl} = route.params;
+const SummaryScreen = ({ route, navigation }) => {
+  const { typeUrl } = route.params;
+
   const renderHeader = (
     <TouchableOpacity
       style={styleGeneral.generalHeaderContainer}
@@ -53,7 +53,8 @@ const SummaryScreen = ({route }) => {
         />
         {renderHeader}
         <ScrollView style={{ flex: 1 }}>
-          {typeUrl === "donation" && <DonationSummaryScreen />}
+          {typeUrl === "createLink" && <DonationSummaryScreen />}
+          {typeUrl === "donateFunds" && <DonationPaymentScreen />}
         </ScrollView>
       </SafeAreaView>
     </LinearGradient>
